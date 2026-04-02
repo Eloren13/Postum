@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Постум — главные книги русской литературы</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f2;
+            font-family: system-ui, -apple-system, 'Helvetica Neue', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.3;
+            padding: 0rem 1rem 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Центральный блок с заголовком и стихами */
+        .hero {
+            text-align: center;
+            margin: 0rem 0 2rem 0;
+            padding: 3rem 1rem 2rem 1rem; /* увеличен верхний padding с 1rem до 3rem */
+            border-bottom: 1px solid #d4d4ce;
+        }
+
+        .main-title {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            font-size: 150px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+            margin-bottom: 2.5rem; /* увеличен отступ снизу с 1.5rem до 2.5rem */
+            margin-top: 0.5rem; /* добавлен небольшой отступ сверху */
+            line-height: 1;
+        }
+
+        .poem-block {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            background: #fefef8;
+            border: 1px solid #e8e8e2;
+            transition: all 0.2s ease;
+        }
+
+        .poem-author {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: #7a7a75;
+            margin-bottom: 1rem;
+        }
+
+        .poem-lines {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2a2a27;
+            white-space: pre-line;
+            margin-bottom: 1.2rem;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: 1px solid #c0c0b8;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5a5a55;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .refresh-btn:hover {
+            background: #e8e8e2;
+            border-color: #8a8a85;
+            color: #1a1a1a;
+        }
+
+        /* Спецпроекты */
+        .specials {
+            margin: 2rem 0 4rem 0;
+        }
+
+        .specials-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: #7a7a75;
+            margin-bottom: 1rem;
+        }
+
+        .specials-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .special-card {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #e3e3de;
+            transition: all 0.2s ease;
+        }
+
+        .special-card:hover {
+            border-color: #a0a09a;
+            background: #fefefc;
+        }
+
+        .special-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #8a8a85;
+            margin-bottom: 1rem;
+        }
+
+        .special-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .special-desc {
+            font-size: 0.85rem;
+            color: #3a3a37;
+            line-height: 1.4;
+        }
+
+        /* Основная сетка книг */
+        .grid-books {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.8rem 2rem;
+        }
+
+        .book-card {
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+            padding-bottom: 0.5rem;
+        }
+
+        .book-card:hover {
+            border-bottom-color: #c0c0b8;
+        }
+
+        .author {
+            font-size: 0.9rem;
+            font-weight: 450;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #4a4a45;
+            margin-bottom: 0.3rem;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 650;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #141413;
+            margin-bottom: 0.25rem;
+        }
+
+        .site-footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d4d4ce;
+            font-size: 0.8rem;
+            color: #6a6a65;
+            text-align: left;
+        }
+
+        /* Адаптив для мобильных устройств */
+        @media (max-width: 700px) {
+            body {
+                padding: 0rem 0.5rem 1rem 0.5rem;
+            }
+            .title {
+                font-size: 1.35rem;
+            }
+            .grid-books {
+                gap: 1.2rem;
+            }
+            .main-title {
+                font-size: 80px;
+                margin-bottom: 1.5rem;
+            }
+            .hero {
+                padding: 2rem 1rem 2rem 1rem;
+            }
+            .poem-lines {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .main-title {
+                font-size: 60px;
+            }
+        }
+
+        a, .book-card {
+            text-decoration: none;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Центральный блок с заголовком и стихами -->
+    <div class="hero">
+        <div class="main-title">Постум</div>
+        <div class="poem-block" id="poemBlock">
+            <div class="poem-author" id="poemAuthor">Анна Ахматова</div>
+            <div class="poem-lines" id="poemLines">
+                Муза ушла по дороге,<br>
+                Осенней, узкой, крутой,<br>
+                И были черны ее ноги<br>
+                Крупной утренней росой.
+            </div>
+            <button class="refresh-btn" id="refreshPoemBtn">⟳ Другое стихотворение</button>
+        </div>
+    </div>
+
+    <!-- Спецпроект: История философии -->
+    <div class="specials">
+        <div class="specials-title">СПЕЦПРОЕКТ НА «ПОСТУМ»</div>
+        <div class="specials-grid">
+            <div class="special-card">
+                <div class="special-label">курс</div>
+                <div class="special-title">История философии</div>
+                <div class="special-desc">От античности до экзистенциализма: главные идеи, мыслители и тексты, изменившие мир</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной каталог -->
+    <div class="catalog-section">
+        <div class="grid-books">
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Нос</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Хаджи-Мурат</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Записки из подполья</div></div>
+            <div class="book-card"><div class="author">Александр Грибоедов</div><div class="title">Горе от ума</div></div>
+            <div class="book-card"><div class="author">Варлам Шаламов</div><div class="title">Колымские рассказы</div></div>
+            <div class="book-card"><div class="author">Андрей Битов</div><div class="title">Пушкинский дом</div></div>
+            <div class="book-card"><div class="author">Антон Чехов</div><div class="title">Вишнёвый сад</div></div>
+            <div class="book-card"><div class="author">Даниил Хармс</div><div class="title">Старуха</div></div>
+            <div class="book-card"><div class="author">Иван Тургенев</div><div class="title">Дворянское гнездо</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Медный всадник</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Война и мир</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Детство. Отрочество. Юность</div></div>
+            <div class="book-card"><div class="author">Михаил Салтыков-Щедрин</div><div class="title">Господа Головлёвы</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Смерть Ивана Ильича</div></div>
+            <div class="book-card"><div class="author">Николай Карамзин</div><div class="title">Бедная Лиза</div></div>
+            <div class="book-card"><div class="author">Валентин Распутин</div><div class="title">Прощание с Матёрой</div></div>
+            <div class="book-card"><div class="author">Андрей Платонов</div><div class="title">Котлован</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Преступление и наказание</div></div>
+            <div class="book-card"><div class="author">Андрей Белый</div><div class="title">Петербург</div></div>
+            <div class="book-card"><div class="author">Илья Ильф, Евгений Петров</div><div class="title">12 стульев</div></div>
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Невский проспект</div></div>
+            <div class="book-card"><div class="author">Иван Тургенев</div><div class="title">Записки охотника</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Братья Карамазовы</div></div>
+            <div class="book-card"><div class="author">Сергей Довлатов</div><div class="title">Заповедник</div></div>
+            <div class="book-card"><div class="author">Владимир Маяковский</div><div class="title">Облако в штанах</div></div>
+            <div class="book-card"><div class="author">Юрий Трифонов</div><div class="title">Дом на набережной</div></div>
+            <div class="book-card"><div class="author">Анна Ахматова</div><div class="title">Поэма без героя</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Идиот</div></div>
+            <div class="book-card"><div class="author">Исаак Бабель</div><div class="title">Одесские рассказы</div></div>
+            <div class="book-card"><div class="author">Аввакум Петров</div><div class="title">Житие протопопа Аввакума</div></div>
+            <div class="book-card"><div class="author">Михаил Зощенко</div><div class="title">Голубая книга</div></div>
+            <div class="book-card"><div class="author">Александр Герцен</div><div class="title">Былое и думы</div></div>
+            <div class="book-card"><div class="author">Юрий Домбровский</div><div class="title">Факультет ненужных вещей</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Евгений Онегин</div></div>
+            <div class="book-card"><div class="author">Велимир Хлебников</div><div class="title">Зангези</div></div>
+            <div class="book-card"><div class="author">Николай Лесков</div><div class="title">Соборяне</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Бесы</div></div>
+            <div class="book-card"><div class="author">Михаил Булгаков</div><div class="title">Мастер и Маргарита</div></div>
+            <div class="book-card"><div class="author">Александр Блок</div><div class="title">Двенадцать</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Повести Белкина</div></div>
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Мёртвые души</div></div>
+            <div class="book-card"><div class="author">Иван Тургенев</div><div class="title">Отцы и дети</div></div>
+            <div class="book-card"><div class="author">Фазиль Искандер</div><div class="title">Сандро из Чегема</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Пиковая дама</div></div>
+            <div class="book-card"><div class="author">Антон Чехов</div><div class="title">Дама с собачкой</div></div>
+            <div class="book-card"><div class="author">Николай Лесков</div><div class="title">Левша</div></div>
+            <div class="book-card"><div class="author">Людмила Петрушевская</div><div class="title">Время ночь</div></div>
+            <div class="book-card"><div class="author">Антон Чехов</div><div class="title">В овраге</div></div>
+            <div class="book-card"><div class="author">Константин Вагинов</div><div class="title">Козлиная песнь</div></div>
+            <div class="book-card"><div class="author">Иван Бунин</div><div class="title">Жизнь Арсеньева</div></div>
+            <div class="book-card"><div class="author">Илья Ильф, Евгений Петров</div><div class="title">Золотой телёнок</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Бедные люди</div></div>
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Ревизор</div></div>
+            <div class="book-card"><div class="author">Михаил Лермонтов</div><div class="title">Демон</div></div>
+            <div class="book-card"><div class="author">Антон Чехов</div><div class="title">Три сестры</div></div>
+            <div class="book-card"><div class="author">Михаил Лермонтов</div><div class="title">Герой нашего времени</div></div>
+            <div class="book-card"><div class="author">Владимир Набоков</div><div class="title">Приглашение на казнь</div></div>
+            <div class="book-card"><div class="author">Евгений Замятин</div><div class="title">Мы</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Маленькие трагедии</div></div>
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Портрет</div></div>
+            <div class="book-card"><div class="author">Иван Гончаров</div><div class="title">Обломов</div></div>
+            <div class="book-card"><div class="author">Александр Солженицын</div><div class="title">Архипелаг ГУЛАГ</div></div>
+            <div class="book-card"><div class="author">Михаил Шолохов</div><div class="title">Тихий Дон</div></div>
+            <div class="book-card"><div class="author">Василий Гроссман</div><div class="title">Жизнь и судьба</div></div>
+            <div class="book-card"><div class="author">Владимир Набоков</div><div class="title">Лолита</div></div>
+            <div class="book-card"><div class="author">Марина Цветаева</div><div class="title">Поэма Горы</div></div>
+            <div class="book-card"><div class="author">Иван Бунин</div><div class="title">Тёмные аллеи</div></div>
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Шинель</div></div>
+            <div class="book-card"><div class="author">Максим Горький</div><div class="title">На дне</div></div>
+            <div class="book-card"><div class="author">Исаак Бабель</div><div class="title">Конармия</div></div>
+            <div class="book-card"><div class="author">Слово о полку Игореве</div><div class="title">Слово о полку Игореве</div></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div>«Постум» — проект о философии и русской литературе.</div>
+        <div style="margin-top: 1rem;">© 2025</div>
+    </footer>
+</div>
+
+<script>
+    // БАЗА СТИХОТВОРЕНИЙ (автор + 4 строки)
+    const poems = [
+        { author: "Анна Ахматова", lines: "Муза ушла по дороге,\nОсенней, узкой, крутой,\nИ были черны ее ноги\nКрупной утренней росой." },
+        { author: "Осип Мандельштам", lines: "Мы живем, под собою не чуя страны,\nНаши речи за десять шагов не слышны,\nА где хватит на полразговорца,\nТам припомнят кремлевского горца." },
+        { author: "Борис Пастернак", lines: "Во всем мне хочется дойти\nДо самой сути.\nВ работе, в поисках пути,\nВ сердечной смуте." },
+        { author: "Марина Цветаева", lines: "Моим стихам, написанным так рано,\nЧто и не знала я, что я — поэт,\nСорвавшимся, как брызги из фонтана,\nКак искры из ракет." },
+        { author: "Иосиф Бродский", lines: "Я входил вместо дикого зверя в клетку,\nжег свой срок и кликуху гвоздил в дощатом рундуке,\nбыл обласкан и зализан у моря,\nи пропущен на рейс в сарае." },
+        { author: "Александр Блок", lines: "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет." },
+        { author: "Сергей Есенин", lines: "Не жалею, не зову, не плачу,\nВсё пройдет, как с белых яблонь дым.\nУвяданья золотом охваченный,\nЯ не буду больше молодым." },
+        { author: "Владимир Маяковский", lines: "Послушайте!\nВедь, если звезды зажигают —\nзначит — это кому-нибудь нужно?\nЗначит — кто-то хочет, чтобы они были?" },
+        { author: "Афанасий Фет", lines: "Шепот, робкое дыханье,\nТрели соловья,\nСеребро и колыханье\nСонного ручья." },
+        { author: "Фёдор Тютчев", lines: "Умом Россию не понять,\nАршином общим не измерить:\nУ ней особенная стать —\nВ Россию можно только верить." },
+        { author: "Николай Гумилёв", lines: "Я вежлив с жизнью современною,\nНо между нами есть преграда,\nВсё, что смешит ее, надменную,\nМоя единая отрада." },
+        { author: "Владимир Набоков", lines: "Лишь о тебе мои стихи,\nмоя любовь, моя отрава,\nтебе — улыбка, мне — забава,\nтебе — цветы, мне — все стихи." }
+    ];
+
+    function getRandomPoem() {
+        const randomIndex = Math.floor(Math.random() * poems.length);
+        return poems[randomIndex];
+    }
+
+    function updatePoem() {
+        const poem = getRandomPoem();
+        document.getElementById('poemAuthor').textContent = poem.author;
+        const linesHtml = poem.lines.replace(/\n/g, '<br>');
+        document.getElementById('poemLines').innerHTML = linesHtml;
+    }
+
+    updatePoem();
+    document.getElementById('refreshPoemBtn').addEventListener('click', updatePoem);
+</script>
+</body>
+</html>
