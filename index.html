@@ -548,7 +548,6 @@
             <div class="school-page-period">VI век до н.э. · Милет, Иония</div>
         </div>
 
-        <!-- Заметное видео -->
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/lt88jY2ljtY?si=tLDl5TQo3mxHQz13" 
                     title="YouTube video player" 
@@ -586,14 +585,13 @@
         <span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span>
     </div>
 
-    <!-- СТРАНИЦА ПИФАГОРЕЙСКОЙ ШКОЛЫ (С НОВЫМ ВИДЕО) -->
+    <!-- СТРАНИЦА ПИФАГОРЕЙСКОЙ ШКОЛЫ -->
     <div id="pythagoreanPage" class="page">
         <div class="school-page-header">
             <div class="school-page-title">Пифагорейская школа</div>
             <div class="school-page-period">VI–IV века до н.э. · Кротон, Южная Италия</div>
         </div>
 
-        <!-- НОВОЕ ВИДЕО ДЛЯ ПИФАГОРЕЙСКОЙ ШКОЛЫ -->
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/Z1cCdiK8sIA?si=8M7pB0H9ogxPGWag" 
                     title="ПИФАГОРЕЙСКАЯ ШКОЛА | ИСТОРИЯ ФИЛОСОФИИ" 
@@ -638,16 +636,32 @@
 </div>
 
 <script>
-    // Переключение между основными страницами
+    // Переключение между основными страницами — ИСПРАВЛЕНО
     function showPage(pageId) {
-        const pages = ['mainPage', 'philosophyPage', 'milesianPage', 'pythagoreanPage'];
-        pages.forEach(id => {
+        // Полный список всех страниц
+        const allPages = ['mainPage', 'philosophyPage', 'milesianPage', 'pythagoreanPage'];
+        
+        // Скрываем все страницы
+        allPages.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.classList.remove('active');
         });
         
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) targetPage.classList.add('active');
+        // Показываем нужную страницу
+        let targetId = pageId;
+        // Обработка сокращённых названий
+        if (pageId === 'main') targetId = 'mainPage';
+        if (pageId === 'philosophy') targetId = 'philosophyPage';
+        
+        const targetPage = document.getElementById(targetId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        } else {
+            // Если страница не найдена, показываем главную
+            console.warn('Страница не найдена:', targetId);
+            document.getElementById('mainPage').classList.add('active');
+        }
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
