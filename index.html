@@ -5,450 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Постум — главные книги русской литературы</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f5f5f2;
-            font-family: system-ui, -apple-system, 'Helvetica Neue', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
-            color: #1a1a1a;
-            line-height: 1.3;
-            padding: 0rem 1rem 2rem 1rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-links {
-            text-align: right;
-            padding: 1rem 0;
-            border-bottom: 1px solid #d4d4ce;
-            margin-bottom: 1rem;
-        }
-
-        .nav-link {
-            display: inline-block;
-            margin-left: 1.5rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5a5a55;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover {
-            color: #1a1a1a;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        .hero {
-            text-align: center;
-            margin: 0rem 0 2rem 0;<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Постум — главные книги русской литературы</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f5f5f2;
-            font-family: system-ui, -apple-system, 'Helvetica Neue', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
-            color: #1a1a1a;
-            line-height: 1.3;
-            padding: 0rem 1rem 2rem 1rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-links {
-            text-align: right;
-            padding: 1rem 0;
-            border-bottom: 1px solid #d4d4ce;
-            margin-bottom: 1rem;
-        }
-
-        .nav-link {
-            display: inline-block;
-            margin-left: 1.5rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5a5a55;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover {
-            color: #1a1a1a;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        .hero {
-            text-align: center;
-            margin: 0rem 0 2rem 0;
-            padding: 3rem 1rem 2rem 1rem;
-            border-bottom: 1px solid #d4d4ce;
-        }
-
-        .main-title {
-            font-family: 'Times New Roman', 'Georgia', serif;
-            font-size: 150px;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: #1a1a1a;
-            margin-bottom: 2.5rem;
-            margin-top: 0.5rem;
-            line-height: 1;
-        }
-
-        .poem-block {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            background: #fefef8;
-            border: 1px solid #e8e8e2;
-            transition: all 0.2s ease;
-        }
-
-        .poem-author {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            color: #7a7a75;
-            margin-bottom: 1rem;
-        }
-
-        .poem-lines {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #2a2a27;
-            white-space: pre-line;
-            margin-bottom: 1.2rem;
-        }
-
-        .refresh-btn {
-            background: none;
-            border: 1px solid #c0c0b8;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.75rem;
-            font-family: inherit;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5a5a55;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 0.5rem;
-        }
-
-        .refresh-btn:hover {
-            background: #e8e8e2;
-            border-color: #8a8a85;
-            color: #1a1a1a;
-        }
-
-        .specials {
-            margin: 2rem 0 4rem 0;
-        }
-
-        .specials-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            color: #7a7a75;
-            margin-bottom: 1rem;
-        }
-
-        .specials-grid {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .special-card {
-            flex: 1;
-            min-width: 280px;
-            background: white;
-            padding: 1.5rem;
-            border: 1px solid #e3e3de;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .special-card:hover {
-            border-color: #a0a09a;
-            background: #fefefc;
-            transform: translateY(-2px);
-        }
-
-        .school-card {
-            background: white;
-            border: 1px solid #e3e3de;
-            padding: 1.8rem;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .school-card:hover {
-            border-color: #a0a09a;
-            background: #fefefc;
-            transform: translateY(-2px);
-        }
-
-        .special-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #8a8a85;
-            margin-bottom: 1rem;
-        }
-
-        .special-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
-        }
-
-        .special-desc {
-            font-size: 0.85rem;
-            color: #3a3a37;
-            line-height: 1.4;
-        }
-
-        .philosophy-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .philosophy-title {
-            font-family: 'Times New Roman', 'Georgia', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .philosophy-intro {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #3a3a37;
-        }
-
-        .schools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .school-period {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #8a8a85;
-            margin-bottom: 0.8rem;
-        }
-
-        .school-name {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            font-family: 'Times New Roman', serif;
-        }
-
-        .school-thinkers {
-            font-size: 0.85rem;
-            color: #5a5a55;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .school-desc {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #2a2a27;
-        }
-
-        .school-page-header {
-            margin-bottom: 2rem;
-        }
-
-        .school-page-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .school-page-period {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #8a8a85;
-            margin-bottom: 1.5rem;
-        }
-
-        .video-container {
-            margin: 2rem 0;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .thinker-card {
-            background: #fefef8;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #a0a09a;
-        }
-
-        .thinker-name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-family: 'Times New Roman', serif;
-        }
-
-        .thinker-ideas {
-            margin-top: 0.8rem;
-            padding-left: 1.2rem;
-        }
-
-        .thinker-ideas li {
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin: 2rem 0;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5a5a55;
-            text-decoration: none;
-            cursor: pointer;
-            border-bottom: 1px solid #d4d4ce;
-            padding-bottom: 0.3rem;
-        }
-
-        .back-link:hover {
-            color: #1a1a1a;
-            border-bottom-color: #1a1a1a;
-        }
-
-        .grid-books {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.8rem 2rem;
-        }
-
-        .book-card {
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-            padding-bottom: 0.5rem;
-        }
-
-        .book-card:hover {
-            border-bottom-color: #c0c0b8;
-        }
-
-        .author {
-            font-size: 0.9rem;
-            font-weight: 450;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: #4a4a45;
-            margin-bottom: 0.3rem;
-        }
-
-        .title {
-            font-size: 1.6rem;
-            font-weight: 650;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-            color: #141413;
-            margin-bottom: 0.25rem;
-        }
-
-        .site-footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #d4d4ce;
-            font-size: 0.8rem;
-            color: #6a6a65;
-            text-align: left;
-        }
-
-        @media (max-width: 700px) {
-            body {
-                padding: 0rem 0.5rem 1rem 0.5rem;
-            }
-            .main-title {
-                font-size: 80px;
-            }
-            .philosophy-title, .school-page-title {
-                font-size: 2rem;
-            }
-            .schools-grid {
-                grid-template-columns: 1fr;
-            }
-            .school-name {
-                font-size: 1.4rem;
-            }
-            .thinker-name {
-                font-size: 1.2rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f5f5f2; font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif; color: #1a1a1a; line-height: 1.3; padding: 0 1rem 2rem 1rem; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .nav-links { text-align: right; padding: 1rem 0; border-bottom: 1px solid #d4d4ce; margin-bottom: 1rem; }
+        .nav-link { display: inline-block; margin-left: 1.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #5a5a55; cursor: pointer; }
+        .nav-link:hover { color: #1a1a1a; }
+        .page { display: none; }
+        .page.active { display: block; }
+        .hero { text-align: center; margin: 0 0 2rem 0; padding: 3rem 1rem 2rem 1rem; border-bottom: 1px solid #d4d4ce; }
+        .main-title { font-family: 'Times New Roman', serif; font-size: 150px; font-weight: 700; margin-bottom: 2.5rem; line-height: 1; }
+        .poem-block { max-width: 600px; margin: 0 auto; padding: 1.5rem; background: #fefef8; border: 1px solid #e8e8e2; }
+        .poem-author { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #7a7a75; margin-bottom: 1rem; }
+        .poem-lines { font-family: Georgia, serif; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.2rem; }
+        .refresh-btn { background: none; border: 1px solid #c0c0b8; padding: 0.5rem 1.2rem; font-size: 0.75rem; text-transform: uppercase; cursor: pointer; }
+        .refresh-btn:hover { background: #e8e8e2; }
+        .specials { margin: 2rem 0 4rem 0; }
+        .specials-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #7a7a75; margin-bottom: 1rem; }
+        .specials-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .special-card { flex: 1; min-width: 280px; background: white; padding: 1.5rem; border: 1px solid #e3e3de; cursor: pointer; transition: all 0.2s; }
+        .special-card:hover { border-color: #a0a09a; transform: translateY(-2px); }
+        .special-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: #8a8a85; margin-bottom: 1rem; }
+        .special-title { font-size: 1.35rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .special-desc { font-size: 0.85rem; color: #3a3a37; }
+        .philosophy-header { text-align: center; margin-bottom: 3rem; }
+        .philosophy-title { font-family: 'Times New Roman', serif; font-size: 3rem; font-weight: 600; margin-bottom: 1rem; }
+        .philosophy-intro { max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #3a3a37; }
+        .schools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .school-card { background: white; border: 1px solid #e3e3de; padding: 1.8rem; cursor: pointer; transition: all 0.2s; }
+        .school-card:hover { border-color: #a0a09a; transform: translateY(-2px); }
+        .school-period { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #8a8a85; margin-bottom: 0.8rem; }
+        .school-name { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.8rem; font-family: 'Times New Roman', serif; }
+        .school-thinkers { font-size: 0.85rem; color: #5a5a55; margin-bottom: 1rem; font-style: italic; }
+        .school-desc { font-size: 0.9rem; line-height: 1.5; color: #2a2a27; }
+        .school-page-header { margin-bottom: 2rem; }
+        .school-page-title { font-family: 'Times New Roman', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .school-page-period { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #8a8a85; margin-bottom: 1.5rem; }
+        .video-container { margin: 2rem 0; position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .thinker-card { background: #fefef8; padding: 1.2rem; margin: 1rem 0; border-left: 4px solid #a0a09a; }
+        .thinker-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .thinker-ideas { margin-top: 0.5rem; padding-left: 1.2rem; }
+        .thinker-ideas li { margin-bottom: 0.3rem; line-height: 1.4; }
+        .back-link { display: inline-block; margin: 2rem 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #5a5a55; cursor: pointer; border-bottom: 1px solid #d4d4ce; padding-bottom: 0.3rem; }
+        .back-link:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+        .grid-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.8rem 2rem; }
+        .book-card { border-bottom: 1px solid transparent; transition: border-color 0.2s; padding-bottom: 0.5rem; }
+        .book-card:hover { border-bottom-color: #c0c0b8; }
+        .author { font-size: 0.9rem; font-weight: 450; text-transform: uppercase; letter-spacing: 0.03em; color: #4a4a45; margin-bottom: 0.3rem; }
+        .title { font-size: 1.6rem; font-weight: 650; line-height: 1.2; color: #141413; }
+        .site-footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #d4d4ce; font-size: 0.8rem; color: #6a6a65; }
+        @media (max-width: 700px) { .main-title { font-size: 80px; } .school-name { font-size: 1.4rem; } }
     </style>
 </head>
 <body>
@@ -462,48 +69,31 @@
     <div id="mainPage" class="page active">
         <div class="hero">
             <div class="main-title">Постум</div>
-            <div class="poem-block" id="poemBlock">
+            <div class="poem-block">
                 <div class="poem-author" id="poemAuthor">Анна Ахматова</div>
-                <div class="poem-lines" id="poemLines">
-                    Муза ушла по дороге,<br>
-                    Осенней, узкой, крутой,<br>
-                    И были черны ее ноги<br>
-                    Крупной утренней росой.
-                </div>
+                <div class="poem-lines" id="poemLines">Муза ушла по дороге,<br>Осенней, узкой, крутой,<br>И были черны ее ноги<br>Крупной утренней росой.</div>
                 <button class="refresh-btn" id="refreshPoemBtn">⟳ Другое стихотворение</button>
             </div>
         </div>
-
         <div class="specials">
             <div class="specials-title">СПЕЦПРОЕКТ НА «ПОСТУМ»</div>
             <div class="specials-grid">
                 <div class="special-card" onclick="showPage('philosophy')">
                     <div class="special-label">курс</div>
                     <div class="special-title">История философии</div>
-                    <div class="special-desc">От античности до экзистенциализма: главные идеи, мыслители и тексты, изменившие мир</div>
+                    <div class="special-desc">От античности до современности: главные идеи, мыслители и тексты</div>
                 </div>
             </div>
         </div>
-
-        <div class="catalog-section">
-            <div class="grid-books">
-                <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Нос</div></div>
-                <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Хаджи-Мурат</div></div>
-                <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Записки из подполья</div></div>
-                <div class="book-card"><div class="author">Александр Грибоедов</div><div class="title">Горе от ума</div></div>
-                <div class="book-card"><div class="author">Варлам Шаламов</div><div class="title">Колымские рассказы</div></div>
-                <div class="book-card"><div class="author">Андрей Битов</div><div class="title">Пушкинский дом</div></div>
-                <div class="book-card"><div class="author">Антон Чехов</div><div class="title">Вишнёвый сад</div></div>
-                <div class="book-card"><div class="author">Даниил Хармс</div><div class="title">Старуха</div></div>
-                <div class="book-card"><div class="author">Иван Тургенев</div><div class="title">Дворянское гнездо</div></div>
-                <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Медный всадник</div></div>
-                <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Война и мир</div></div>
-                <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Детство. Отрочество. Юность</div></div>
-                <div class="book-card"><div class="author">Михаил Салтыков-Щедрин</div><div class="title">Господа Головлёвы</div></div>
-                <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Смерть Ивана Ильича</div></div>
-                <div class="book-card"><div class="author">Николай Карамзин</div><div class="title">Бедная Лиза</div></div>
-                <div class="book-card"><div class="author">Валентин Распутин</div><div class="title">Прощание с Матёрой</div></div>
-            </div>
+        <div class="grid-books">
+            <div class="book-card"><div class="author">Николай Гоголь</div><div class="title">Нос</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Хаджи-Мурат</div></div>
+            <div class="book-card"><div class="author">Фёдор Достоевский</div><div class="title">Записки из подполья</div></div>
+            <div class="book-card"><div class="author">Александр Грибоедов</div><div class="title">Горе от ума</div></div>
+            <div class="book-card"><div class="author">Антон Чехов</div><div class="title">Вишнёвый сад</div></div>
+            <div class="book-card"><div class="author">Иван Тургенев</div><div class="title">Дворянское гнездо</div></div>
+            <div class="book-card"><div class="author">Александр Пушкин</div><div class="title">Медный всадник</div></div>
+            <div class="book-card"><div class="author">Лев Толстой</div><div class="title">Война и мир</div></div>
         </div>
     </div>
 
@@ -511,146 +101,231 @@
     <div id="philosophyPage" class="page">
         <div class="philosophy-header">
             <div class="philosophy-title">История философии</div>
-            <div class="philosophy-intro">
-                Путешествие по главным философским школам — от первых мыслителей античности до современных течений. 
-                Нажмите на любую карточку, чтобы узнать подробности.
-            </div>
+            <div class="philosophy-intro">Нажмите на любую карточку, чтобы узнать подробности о школе и её мыслителях.</div>
         </div>
-
-        <div class="schools-grid">
-            <div class="school-card" onclick="showSchool('milesian')"><div class="school-period">VI век до н.э.</div><div class="school-name">Милетская школа</div><div class="school-thinkers">Фалес, Анаксимандр, Анаксимен</div><div class="school-desc">Первая философская школа. Поиск первоначала всего сущего.</div></div>
-            <div class="school-card" onclick="showSchool('pythagorean')"><div class="school-period">VI–IV века до н.э.</div><div class="school-name">Пифагорейская школа</div><div class="school-thinkers">Пифагор, Филолай, Архит</div><div class="school-desc">Число как основа всего сущего. Гармония и бессмертие души.</div></div>
-            <div class="school-card" onclick="showSchool('eleatic')"><div class="school-period">VI–V века до н.э.</div><div class="school-name">Элейская школа</div><div class="school-thinkers">Парменид, Зенон, Мелисс</div><div class="school-desc">Бытие едино и неизменно. Апории Зенона.</div></div>
-            <div class="school-card" onclick="showSchool('atomism')"><div class="school-period">V–IV века до н.э.</div><div class="school-name">Атомизм</div><div class="school-thinkers">Левкипп, Демокрит, Эпикур</div><div class="school-desc">Мир состоит из атомов, движущихся в пустоте.</div></div>
-            <div class="school-card" onclick="showSchool('sophists')"><div class="school-period">V век до н.э.</div><div class="school-name">Софисты и Сократ</div><div class="school-thinkers">Протагор, Горгий, Сократ</div><div class="school-desc">Поворот от космоса к человеку. Майевтика.</div></div>
-            <div class="school-card" onclick="showSchool('plato')"><div class="school-period">IV век до н.э.</div><div class="school-name">Академия Платона</div><div class="school-thinkers">Платон, Спевсипп, Ксенократ</div><div class="school-desc">Мир идей как подлинная реальность.</div></div>
-            <div class="school-card" onclick="showSchool('aristotle')"><div class="school-period">IV век до н.э.</div><div class="school-name">Ликей Аристотеля</div><div class="school-thinkers">Аристотель, Теофраст</div><div class="school-desc">Систематизация знаний. Логика, физика, этика.</div></div>
-            <div class="school-card" onclick="showSchool('cynicism')"><div class="school-period">IV–III века до н.э.</div><div class="school-name">Кинизм</div><div class="school-thinkers">Антисфен, Диоген, Кратет</div><div class="school-desc">Аскетизм, презрение к условностям, жизнь по природе.</div></div>
-            <div class="school-card" onclick="showSchool('stoicism')"><div class="school-period">III век до н.э. – II век н.э.</div><div class="school-name">Стоицизм</div><div class="school-thinkers">Зенон, Сенека, Эпиктет, Марк Аврелий</div><div class="school-desc">Жизнь в согласии с логосом. Апатия и добродетель.</div></div>
-            <div class="school-card" onclick="showSchool('epicureanism')"><div class="school-period">IV–III века до н.э.</div><div class="school-name">Эпикуреизм</div><div class="school-thinkers">Эпикур, Лукреций</div><div class="school-desc">Удовольствие как отсутствие страданий. Атомизм.</div></div>
-            <div class="school-card" onclick="showSchool('skepticism')"><div class="school-period">III век до н.э. – III век н.э.</div><div class="school-name">Скептицизм</div><div class="school-thinkers">Пиррон, Секст Эмпирик, Тимон</div><div class="school-desc">Воздержание от суждений. Путь к атараксии.</div></div>
-            <div class="school-card" onclick="showSchool('neoplatonism')"><div class="school-period">III–VI века н.э.</div><div class="school-name">Неоплатонизм</div><div class="school-thinkers">Плотин, Порфирий, Прокл</div><div class="school-desc">Учение о Едином. Эманация. Мистическое восхождение.</div></div>
-            <div class="school-card" onclick="showSchool('scholasticism')"><div class="school-period">IX–XIV века</div><div class="school-name">Схоластика</div><div class="school-thinkers">Фома Аквинский, Ансельм, Оккам</div><div class="school-desc">Философия как служанка теологии. Универсалии.</div></div>
-            <div class="school-card" onclick="showSchool('humanism')"><div class="school-period">XIV–XVI века</div><div class="school-name">Гуманизм Ренессанса</div><div class="school-thinkers">Пико делла Мирандола, Эразм, Монтень</div><div class="school-desc">Возвращение к античности. Прославление человека.</div></div>
-            <div class="school-card" onclick="showSchool('rationalism')"><div class="school-period">XVII век</div><div class="school-name">Рационализм</div><div class="school-thinkers">Декарт, Спиноза, Лейбниц</div><div class="school-desc">Разум — источник истины. Cogito ergo sum.</div></div>
-            <div class="school-card" onclick="showSchool('empiricism')"><div class="school-period">XVII–XVIII века</div><div class="school-name">Эмпиризм</div><div class="school-thinkers">Бэкон, Локк, Беркли, Юм</div><div class="school-desc">Опыт — источник знания. Tabula rasa.</div></div>
-            <div class="school-card" onclick="showSchool('enlightenment')"><div class="school-period">XVIII век</div><div class="school-name">Просвещение</div><div class="school-thinkers">Вольтер, Руссо, Дидро, Монтескьё</div><div class="school-desc">Вера в прогресс и разум. Общественный договор.</div></div>
-            <div class="school-card" onclick="showSchool('germanIdealism')"><div class="school-period">XVIII–XIX века</div><div class="school-name">Немецкий идеализм</div><div class="school-thinkers">Кант, Фихте, Шеллинг, Гегель</div><div class="school-desc">Категорический императив. Диалектика. Абсолютный дух.</div></div>
-            <div class="school-card" onclick="showSchool('marxism')"><div class="school-period">XIX век</div><div class="school-name">Марксизм</div><div class="school-thinkers">Маркс, Энгельс, Ленин</div><div class="school-desc">Материалистическое понимание истории. Классовая борьба.</div></div>
-            <div class="school-card" onclick="showSchool('utilitarianism')"><div class="school-period">XIX век</div><div class="school-name">Утилитаризм</div><div class="school-thinkers">Бентам, Милль</div><div class="school-desc">Наибольшее счастье для наибольшего числа людей.</div></div>
-            <div class="school-card" onclick="showSchool('irrationalism')"><div class="school-period">XIX век</div><div class="school-name">Иррационализм</div><div class="school-thinkers">Шопенгауэр, Кьеркегор, Ницше</div><div class="school-desc">Воля к жизни. Экзистенциальный выбор. Сверхчеловек.</div></div>
-            <div class="school-card" onclick="showSchool('phenomenology')"><div class="school-period">XX век</div><div class="school-name">Феноменология</div><div class="school-thinkers">Гуссерль, Хайдеггер, Мерло-Понти</div><div class="school-desc">«Назад к вещам!» Исследование сознания.</div></div>
-            <div class="school-card" onclick="showSchool('existentialism')"><div class="school-period">XX век</div><div class="school-name">Экзистенциализм</div><div class="school-thinkers">Сартр, Камю, де Бовуар, Ясперс</div><div class="school-desc">Существование предшествует сущности. Свобода и тревога.</div></div>
-            <div class="school-card" onclick="showSchool('analytic')"><div class="school-period">XX–XXI века</div><div class="school-name">Аналитическая философия</div><div class="school-thinkers">Рассел, Витгенштейн, Остин, Куайн</div><div class="school-desc">Лингвистический поворот. Анализ языка.</div></div>
-            <div class="school-card" onclick="showSchool('poststructuralism')"><div class="school-period">XX–XXI века</div><div class="school-name">Постструктурализм</div><div class="school-thinkers">Фуко, Деррида, Делёз, Бодрийяр</div><div class="school-desc">Деконструкция. Власть и знание. Симулякры.</div></div>
-        </div>
-
+        <div class="schools-grid" id="schoolsGrid"></div>
         <span class="back-link" onclick="showPage('main')">← Вернуться на главную</span>
     </div>
 
-    <!-- Страницы школ (все 27) -->
-    <div id="milesianPage" class="page"><div class="school-page-header"><div class="school-page-title">Милетская школа</div><div class="school-page-period">VI век до н.э. · Милет</div></div><div class="video-container"><iframe src="https://www.youtube.com/embed/lt88jY2ljtY" frameborder="0" allowfullscreen></iframe></div><div class="thinker-card"><div class="thinker-name">Фалес Милетский (ок. 625–545 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё на свете — это вода в той или иной форме.</li><li>Земля плавает на воде.</li><li>Всё одушевлено и полно богов.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Анаксимандр (ок. 610–546 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё произошло из «апейрона» (беспредельного).</li><li>Земля — верхняя грань цилиндра, висящего в космосе.</li><li>Люди произошли от других видов животных.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Анаксимен (ок. 585–525 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё происходит из воздуха.</li><li>Разрежение → огонь, сгущение → облака, вода, земля, камни.</li><li>Земля — плоский диск, парящий в воздухе.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
+    <!-- Контейнер для динамических страниц школ -->
+    <div id="dynamicPages"></div>
 
-    <div id="pythagoreanPage" class="page"><div class="school-page-header"><div class="school-page-title">Пифагорейская школа</div><div class="school-page-period">VI–IV века до н.э. · Кротон</div></div><div class="video-container"><iframe src="https://www.youtube.com/embed/Z1cCdiK8sIA" frameborder="0" allowfullscreen></iframe></div><div class="thinker-card"><div class="thinker-name">Пифагор (ок. 570–490 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Математический порядок пронизывает физический мир.</li><li>Душа бессмертна и вселяется в других животных.</li><li>Мы помним многое из прошлой жизни.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Филолай (ок. 470–385 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Числа лежат в основе всех вещей.</li><li>Вселенная устроена по гармоническим законам.</li><li>Земля не является центром Вселенной.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Архит Тарентский (ок. 435–347 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Развитие механики и математики.</li><li>Музыка основана на математических пропорциях.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="eleaticPage" class="page"><div class="school-page-header"><div class="school-page-title">Элейская школа</div><div class="school-page-period">VI–V века до н.э. · Элея</div></div><div class="thinker-card"><div class="thinker-name">Парменид (ок. 540–470 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Не могло быть ничего; всё должно было существовать всегда.</li><li>Ничто не может стать чем-нибудь и нечто не может превратиться в ничто.</li><li>Вселенная — единое и неизменное целое; всё есть одно.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Зенон Элейский (ок. 490–430 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Движение невозможно (апории «Ахиллес и черепаха», «Стрела»).</li><li>Безупречно логичный аргумент может привести к ложному выводу.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="atomismPage" class="page"><div class="school-page-header"><div class="school-page-title">Атомизм</div><div class="school-page-period">V–IV века до н.э.</div></div><div class="thinker-card"><div class="thinker-name">Демокрит (ок. 460–370 до н.э.) и Левкипп (V в. до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё состоит из неделимых частиц (атомов), слишком малых, чтобы их увидеть.</li><li>Все изменения — изменение конфигурации или местоположения атомов.</li><li>Вселенная — не непрерывный континуум, а состоит из отдельных сущностей.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="sophistsPage" class="page"><div class="school-page-header"><div class="school-page-title">Софисты и Сократ</div><div class="school-page-period">V век до н.э. · Афины</div></div><div class="thinker-card"><div class="thinker-name">Протагор (ок. 490–420 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Человек есть мера всего сущего.</li><li>Невозможно узнать, существуют ли боги.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Сократ (469–399 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Знание о вселенной не влияет на нашу жизнь.</li><li>Нужно знать, как строить жизнь и как вести себя.</li><li>Справедливость существует как некая сущность.</li><li>Честному человеку не может быть причинён долговременный вред.</li><li>Никто сознательно не совершает зла.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="platoPage" class="page"><div class="school-page-header"><div class="school-page-title">Академия Платона</div><div class="school-page-period">IV век до н.э. · Афины</div></div><div class="thinker-card"><div class="thinker-name">Платон (428/7–348/7 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё сущее — эфемерная копия вечной Формы (Идеи).</li><li>Под нашим миром существует иная реальность, доступная уму.</li><li>Души обладают знанием Форм до рождения; обучение — припоминание.</li><li>В нашем мире всё становится, но ничто не есть.</li><li>Наша цель — отвергать удовольствия тела и проникать в фундаментальную реальность.</li><li>Лучше пострадать от несправедливости, чем совершить её.</li><li>Философы должны управлять обществом.</li><li>Женщины участвуют во всех сферах жизни наравне с мужчинами.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="aristotlePage" class="page"><div class="school-page-header"><div class="school-page-title">Ликей Аристотеля</div><div class="school-page-period">IV век до н.э. · Афины</div></div><div class="thinker-card"><div class="thinker-name">Аристотель (384–322 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Существует только один мир — тот, в котором мы живём.</li><li>Вещь есть то, что она есть, благодаря форме и структуре.</li><li>Четыре причины: материальная, действующая, формальная, целевая.</li><li>Душа — форма тела, система способностей.</li><li>Эвдемония (счастье) — цель всех действий.</li><li>Человек — политическое животное.</li><li>Добродетель — середина между двумя крайностями.</li><li>Мужчина выше, женщина ниже; мужчина правит.</li><li>Поэзия философичнее истории: говорит об общем.</li><li>Трагедия вызывает катарсис через сострадание и страх.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="cynicismPage" class="page"><div class="school-page-header"><div class="school-page-title">Кинизм</div><div class="school-page-period">IV–III века до н.э.</div></div><div class="thinker-card"><div class="thinker-name">Диоген Синопский (ок. 412–323 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Единственное, что имеет значение — разница между истинными и ложными ценностями.</li><li>Все социальные условности — бессмыслица.</li><li>«Я — гражданин мира» (космополитизм).</li><li>Жил в бочке, на вопрос Александра «Что я могу для тебя сделать?» ответил: «Не заслоняй мне солнца».</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="stoicismPage" class="page"><div class="school-page-header"><div class="school-page-title">Стоицизм</div><div class="school-page-period">III век до н.э. – II век н.э.</div></div><div class="thinker-card"><div class="thinker-name">Зенон Китийский (ок. 334–262 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Субстанция Бога — весь мир и небо.</li><li>Мир обладает разумом.</li><li>Закон природы божественен и имеет силу принуждать нас к правильному.</li><li>Добродетельная жизнь — жизнь в согласии с природой.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Эпиктет (ок. 50–138 н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Бог имманентен природному порядку.</li><li>Наши рациональные умы — фрагменты ума Бога.</li><li>Свободная воля — истинное «я» индивида.</li><li>Наши чувства обусловлены нашими суждениями о ценности.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Марк Аврелий (121–180 н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Бог един, пронизывая все вещи; всё бытие едино.</li><li>Что бы ни случилось, случается правильно; в событиях есть рациональный порядок.</li><li>Жизнь — лишь мгновение; Разум, божественный дух внутри нас — наш проводник.</li><li>Если ты расстроен внешним, то не вещь тебя тревожит, а твоё суждение о ней.</li><li>Смерть — освобождение от чувственных впечатлений.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="epicureanismPage" class="page"><div class="school-page-header"><div class="school-page-title">Эпикуреизм</div><div class="school-page-period">IV–III века до н.э.</div></div><div class="thinker-card"><div class="thinker-name">Эпикур (341–270 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Всё во вселенной — атомы и пространство.</li><li>Атомы неразрушимы и вечны, их комбинации изменчивы.</li><li>Не бойтесь смерти: пока мы есть, смерти нет; когда смерть наступит, нас нет.</li><li>Боги далеки и не вмешиваются в наши дела.</li><li>Счастье в этом мире — наша цель.</li><li>Путь к счастью — уход от публичной жизни в сообщества единомышленников.</li><li>Наибольшее удовольствие — через знание, дружбу и свободу от страха.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="skepticismPage" class="page"><div class="school-page-header"><div class="school-page-title">Скептицизм</div><div class="school-page-period">III век до н.э. – III век н.э.</div></div><div class="thinker-card"><div class="thinker-name">Пиррон из Элиды (ок. 360–275 до н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Люди придерживаются противоположных взглядов; знание субъективно.</li><li>Мы не можем считать одно объяснение истинным, а другое — ложным.</li><li>Нужно просто плыть по течению — следовать обычаям места и времени.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Секст Эмпирик (II–III вв. н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Любому утверждению можно противопоставить равносильное возражение.</li><li>Воздержание от суждений (эпохе) ведёт к безмятежности (атараксия).</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="neoplatonismPage" class="page"><div class="school-page-header"><div class="school-page-title">Неоплатонизм</div><div class="school-page-period">III–VI века н.э.</div></div><div class="thinker-card"><div class="thinker-name">Плотин (ок. 204–270 н.э.)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Существующее в конечном счёте ментально; быть сотворённым — значит быть мыслимым.</li><li>Три уровня бытия: душа (человек), интеллект и благо.</li><li>Нужно стремиться к восхождению к единству с благом.</li><li>Искусства восходят к формирующим принципам природы.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="scholasticismPage" class="page"><div class="school-page-header"><div class="school-page-title">Схоластика</div><div class="school-page-period">IX–XIV века</div></div><div class="thinker-card"><div class="thinker-name">Фома Аквинский (1225–1274)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Философия — служанка теологии.</li><li>Пять доказательств бытия Бога.</li><li>Гармония веры и разума.</li><li>Спор об универсалиях (реализм против номинализма).</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Уильям Оккам (1287–1347)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Бритва Оккама» — не следует умножать сущее без необходимости.</li><li>Номинализм: универсалии — только имена, не обладающие реальным существованием.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="humanismPage" class="page"><div class="school-page-header"><div class="school-page-title">Гуманизм Ренессанса</div><div class="school-page-period">XIV–XVI века</div></div><div class="thinker-card"><div class="thinker-name">Пико делла Мирандола (1463–1494)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Человек — кузнец собственного счастья.</li><li>«Речь о достоинстве человека» — манифест гуманизма.</li><li>Человек может подняться до ангелов или опуститься до животных.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Мишель Монтень (1533–1592)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Что я знаю?» — скептицизм как основа познания.</li><li>Очерки как новый жанр философствования.</li><li>Исследование собственного «я».</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="rationalismPage" class="page"><div class="school-page-header"><div class="school-page-title">Рационализм</div><div class="school-page-period">XVII век</div></div><div class="thinker-card"><div class="thinker-name">Рене Декарт (1596–1650)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Cogito ergo sum» — «Я мыслю, следовательно, существую».</li><li>Метод радикального сомнения.</li><li>Дуализм души и тела.</li><li>Врождённые идеи.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Бенедикт Спиноза (1632–1677)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Пантеизм: Бог и природа — одно.</li><li>Этика, основанная на геометрическом методе.</li><li>Свобода — познанная необходимость.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Готфрид Лейбниц (1646–1716)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Монадология: мир состоит из неделимых духовных субстанций (монад).</li><li>«Наш мир — лучший из возможных миров».</li><li>Предустановленная гармония.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="empiricismPage" class="page"><div class="school-page-header"><div class="school-page-title">Эмпиризм</div><div class="school-page-period">XVII–XVIII века</div></div><div class="thinker-card"><div class="thinker-name">Джон Локк (1632–1704)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Tabula rasa — разум — чистая доска, заполняемая опытом.</li><li>Первичные и вторичные качества.</li><li>Либерализм и теория общественного договора.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Дэвид Юм (1711–1776)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Проблема индукции: нет логического обоснования причинности.</li><li>Скептицизм в отношении субстанции и «я».</li><li>Этика основана на чувствах, а не на разуме.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="enlightenmentPage" class="page"><div class="school-page-header"><div class="school-page-title">Просвещение</div><div class="school-page-period">XVIII век</div></div><div class="thinker-card"><div class="thinker-name">Вольтер (1694–1778)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Свобода слова, веротерпимость.</li><li>Критика церкви и абсолютизма.</li><li>«Раздавите гадину!» (о религиозном фанатизме).</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Жан-Жак Руссо (1712–1778)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Человек рождается свободным, но повсюду он в оковах».</li><li>Общественный договор.</li><li>Естественный человек добр, культура развращает.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Шарль Монтескьё (1689–1755)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Разделение властей на законодательную, исполнительную и судебную.</li><li>Теория климата: влияние географии на политику.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="germanIdealismPage" class="page"><div class="school-page-header"><div class="school-page-title">Немецкий идеализм</div><div class="school-page-period">XVIII–XIX века</div></div><div class="thinker-card"><div class="thinker-name">Иммануил Кант (1724–1804)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Коперниканский переворот: мы познаём не вещи сами по себе, а явления.</li><li>Категорический императив: «Поступай так, чтобы максима твоей воли могла стать всеобщим законом».</li><li>Априорные формы чувственности (пространство и время).</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Георг Гегель (1770–1831)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Диалектика: тезис — антитезис — синтез.</li><li>Абсолютный дух как высшая стадия развития.</li><li>«Всё действительное разумно, всё разумное действительно».</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="marxismPage" class="page"><div class="school-page-header"><div class="school-page-title">Марксизм</div><div class="school-page-period">XIX век</div></div><div class="thinker-card"><div class="thinker-name">Карл Маркс (1818–1883)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Материалистическое понимание истории: базис (экономика) определяет надстройку.</li><li>Классовая борьба как двигатель истории.</li><li>Теория прибавочной стоимости.</li><li>Отчуждение труда при капитализме.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="utilitarianismPage" class="page"><div class="school-page-header"><div class="school-page-title">Утилитаризм</div><div class="school-page-period">XIX век</div></div><div class="thinker-card"><div class="thinker-name">Джереми Бентам (1748–1832)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Принцип полезности: наибольшее счастье для наибольшего числа людей.</li><li>«Фелицифический калькулятор» для измерения удовольствий.</li><li>Паноптикум как модель идеальной тюрьмы.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Джон Стюарт Милль (1806–1873)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Различие между высшими и низшими удовольствиями.</li><li>Свобода личности как высшее благо («О свободе»).</li><li>Эмансипация женщин.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="irrationalismPage" class="page"><div class="school-page-header"><div class="school-page-title">Иррационализм</div><div class="school-page-period">XIX век</div></div><div class="thinker-card"><div class="thinker-name">Артур Шопенгауэр (1788–1860)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Мир как воля и представление.</li><li>Воля к жизни — иррациональная, слепая сила, источник страдания.</li><li>Путь к спасению — искусство, сострадание, аскетизм.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Фридрих Ницше (1844–1900)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Бог умер» — критика христианской морали.</li><li>Воля к власти как основа жизни.</li><li>Сверхчеловек как цель эволюции.</li><li>Вечное возвращение.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Сёрен Кьеркегор (1813–1855)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Предтеча экзистенциализма.</li><li>Три стадии существования: эстетическая, этическая, религиозная.</li><li>Прыжок веры.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="phenomenologyPage" class="page"><div class="school-page-header"><div class="school-page-title">Феноменология</div><div class="school-page-period">XX век</div></div><div class="thinker-card"><div class="thinker-name">Эдмунд Гуссерль (1859–1938)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Назад к самим вещам!»</li><li>Феноменологическая редукция (эпохе) — воздержание от суждений о внешнем мире.</li><li>Интенциональность сознания: сознание всегда есть сознание о чём-то.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Мартин Хайдеггер (1889–1976)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Бытие-в-мире (Dasein).</li><li>Забота как основное настроение.</li><li>Подлинное и неподлинное существование.</li><li>Время как горизонт понимания бытия.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="existentialismPage" class="page"><div class="school-page-header"><div class="school-page-title">Экзистенциализм</div><div class="school-page-period">XX век</div></div><div class="thinker-card"><div class="thinker-name">Жан-Поль Сартр (1905–1980)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Существование предшествует сущности».</li><li>Человек осуждён быть свободным.</li><li>Тревога, покинутость, отчаяние.</li><li>Другие — это ад.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Альбер Камю (1913–1960)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Абсурд как противоречие между стремлением человека к смыслу и молчанием мира.</li><li>Бунт как единственный последовательный ответ на абсурд.</li><li>Миф о Сизифе: нужно представить Сизифа счастливым.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Симона де Бовуар (1908–1986)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>«Вторая пол» — фундаментальный труд феминизма.</li><li>«Женщиной не рождаются, женщиной становятся».</li><li>Экзистенциалистская этика свободы.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="analyticPage" class="page"><div class="school-page-header"><div class="school-page-title">Аналитическая философия</div><div class="school-page-period">XX–XXI века</div></div><div class="thinker-card"><div class="thinker-name">Людвиг Витгенштейн (1889–1951)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Ранний Витгенштейн: «О чём невозможно говорить, о том следует молчать».</li><li>«Логико-философский трактат»: мир — совокупность фактов, а не вещей.</li><li>Поздний Витгенштейн: значение слова — в его употреблении в языковой игре.</li><li>Философские проблемы — следствие путаницы в языке.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Бертран Рассел (1872–1970)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Теория дескрипций.</li><li>Логический атомизм.</li><li>Парадокс Рассела.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <div id="poststructuralismPage" class="page"><div class="school-page-header"><div class="school-page-title">Постструктурализм</div><div class="school-page-period">XX–XXI века</div></div><div class="thinker-card"><div class="thinker-name">Мишель Фуко (1926–1984)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Власть и знание неразрывно связаны.</li><li>Дискурс как практика, формирующая реальность.</li><li>Биовласть и дисциплинарное общество.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Жак Деррида (1930–2004)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Деконструкция текста.</li><li>Различие (différance).</li><li>Критика логоцентризма и метафизики присутствия.</li></ul></div></div><div class="thinker-card"><div class="thinker-name">Жиль Делёз (1925–1995)</div><div class="thinker-ideas"><strong>Основные идеи:</strong><ul><li>Ризома как альтернатива иерархическим структурам.</li><li>Машины желания и тело без органов.</li><li>Анти-Эдип и анти-психиатрия.</li></ul></div></div><span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span></div>
-
-    <footer class="site-footer">
-        <div>«Постум» — каталог главных книг русской литературы.</div>
-        <div style="margin-top: 1rem;">© 2025</div>
-    </footer>
+    <footer class="site-footer"><div>«Постум» — каталог главных книг русской литературы.</div><div>© 2025</div></footer>
 </div>
 
 <script>
-    const allSchools = ['milesian', 'pythagorean', 'eleatic', 'atomism', 'sophists', 'plato', 'aristotle', 'cynicism', 'stoicism', 'epicureanism', 'skepticism', 'neoplatonism', 'scholasticism', 'humanism', 'rationalism', 'empiricism', 'enlightenment', 'germanIdealism', 'marxism', 'utilitarianism', 'irrationalism', 'phenomenology', 'existentialism', 'analytic', 'poststructuralism'];
-    
-    function showPage(pageId) {
-        const allPages = ['mainPage', 'philosophyPage', ...allSchools.map(s => s + 'Page')];
-        allPages.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.classList.remove('active');
+    // Данные по всем школам
+    const schoolsData = [
+        { id: 'milesian', name: 'Милетская школа', period: 'VI век до н.э.', thinkers: 'Фалес, Анаксимандр, Анаксимен', desc: 'Первая философская школа. Поиск первоначала всего сущего.',
+          details: [
+            { name: 'Фалес Милетский (ок. 625–545 до н.э.)', ideas: ['Всё на свете — это вода в той или иной форме.', 'Земля плавает на воде.', 'Всё одушевлено и полно богов.'] },
+            { name: 'Анаксимандр (ок. 610–546 до н.э.)', ideas: ['Всё произошло из «апейрона» (беспредельного).', 'Земля — верхняя грань цилиндра, висящего в космосе.', 'Люди произошли от других видов животных.'] },
+            { name: 'Анаксимен (ок. 585–525 до н.э.)', ideas: ['Всё происходит из воздуха.', 'Разрежение → огонь, сгущение → облака, вода, земля, камни.', 'Земля — плоский диск, парящий в воздухе.'] }
+          ], hasVideo: true, videoUrl: 'https://www.youtube.com/embed/lt88jY2ljtY' },
+        { id: 'pythagorean', name: 'Пифагорейская школа', period: 'VI–IV века до н.э.', thinkers: 'Пифагор, Филолай, Архит', desc: 'Число как основа всего сущего. Гармония и бессмертие души.',
+          details: [
+            { name: 'Пифагор (ок. 570–490 до н.э.)', ideas: ['Математический порядок пронизывает физический мир.', 'Душа бессмертна и вселяется в других животных.', 'Мы помним многое из прошлой жизни.'] },
+            { name: 'Филолай (ок. 470–385 до н.э.)', ideas: ['Числа лежат в основе всех вещей.', 'Вселенная устроена по гармоническим законам.', 'Земля не является центром Вселенной.'] },
+            { name: 'Архит Тарентский (ок. 435–347 до н.э.)', ideas: ['Развитие механики и математики.', 'Музыка основана на математических пропорциях.'] }
+          ], hasVideo: true, videoUrl: 'https://www.youtube.com/embed/Z1cCdiK8sIA' },
+        { id: 'eleatic', name: 'Элейская школа', period: 'VI–V века до н.э.', thinkers: 'Парменид, Зенон, Мелисс', desc: 'Бытие едино и неизменно. Апории Зенона.',
+          details: [
+            { name: 'Парменид (ок. 540–470 до н.э.)', ideas: ['Не могло быть ничего; всё должно было существовать всегда.', 'Ничто не может стать чем-нибудь.', 'Вселенная — единое и неизменное целое.'] },
+            { name: 'Зенон Элейский (ок. 490–430 до н.э.)', ideas: ['Движение невозможно (апории «Ахиллес и черепаха», «Стрела»).', 'Безупречно логичный аргумент может привести к ложному выводу.'] }
+          ], hasVideo: false },
+        { id: 'atomism', name: 'Атомизм', period: 'V–IV века до н.э.', thinkers: 'Левкипп, Демокрит, Эпикур', desc: 'Мир состоит из атомов, движущихся в пустоте.',
+          details: [{ name: 'Демокрит (ок. 460–370 до н.э.) и Левкипп', ideas: ['Всё состоит из неделимых частиц (атомов).', 'Все изменения — изменение конфигурации атомов.', 'Вселенная не непрерывна, а состоит из отдельных сущностей.'] }], hasVideo: false },
+        { id: 'sophists', name: 'Софисты и Сократ', period: 'V век до н.э.', thinkers: 'Протагор, Горгий, Сократ', desc: 'Поворот от космоса к человеку. Майевтика.',
+          details: [
+            { name: 'Протагор (ок. 490–420 до н.э.)', ideas: ['Человек есть мера всего сущего.', 'Невозможно узнать, существуют ли боги.'] },
+            { name: 'Сократ (469–399 до н.э.)', ideas: ['Нужно знать, как строить жизнь.', 'Справедливость существует как некая сущность.', 'Никто сознательно не совершает зла.'] }
+          ], hasVideo: false },
+        { id: 'plato', name: 'Академия Платона', period: 'IV век до н.э.', thinkers: 'Платон, Спевсипп, Ксенократ', desc: 'Мир идей как подлинная реальность.',
+          details: [{ name: 'Платон (428/7–348/7 до н.э.)', ideas: ['Всё сущее — копия вечной Формы (Идеи).', 'Души знают Формы до рождения; обучение — припоминание.', 'Лучше пострадать от несправедливости, чем совершить её.', 'Философы должны управлять обществом.'] }], hasVideo: false },
+        { id: 'aristotle', name: 'Ликей Аристотеля', period: 'IV век до н.э.', thinkers: 'Аристотель, Теофраст', desc: 'Систематизация знаний. Логика, физика, этика.',
+          details: [{ name: 'Аристотель (384–322 до н.э.)', ideas: ['Существует только один мир — тот, в котором мы живём.', 'Четыре причины: материальная, действующая, формальная, целевая.', 'Добродетель — середина между двумя крайностями.', 'Человек — политическое животное.'] }], hasVideo: false },
+        { id: 'cynicism', name: 'Кинизм', period: 'IV–III века до н.э.', thinkers: 'Антисфен, Диоген, Кратет', desc: 'Аскетизм, презрение к условностям, жизнь по природе.',
+          details: [{ name: 'Диоген Синопский (ок. 412–323 до н.э.)', ideas: ['Социальные условности — бессмыслица.', '«Я — гражданин мира» (космополитизм).', 'На вопрос Александра: «Не заслоняй мне солнца».'] }], hasVideo: false },
+        { id: 'stoicism', name: 'Стоицизм', period: 'III век до н.э. – II век н.э.', thinkers: 'Зенон, Сенека, Эпиктет, Марк Аврелий', desc: 'Жизнь в согласии с логосом. Апатия и добродетель.',
+          details: [
+            { name: 'Зенон Китийский (ок. 334–262 до н.э.)', ideas: ['Мир обладает разумом.', 'Добродетельная жизнь — жизнь в согласии с природой.'] },
+            { name: 'Эпиктет (ок. 50–138 н.э.)', ideas: ['Свободная воля — истинное «я» человека.', 'Наши чувства обусловлены нашими суждениями о ценности.'] },
+            { name: 'Марк Аврелий (121–180 н.э.)', ideas: ['Что бы ни случилось, случается правильно.', 'Если ты расстроен внешним, то вещь не тревожит, а твоё суждение о ней.'] }
+          ], hasVideo: false },
+        { id: 'epicureanism', name: 'Эпикуреизм', period: 'IV–III века до н.э.', thinkers: 'Эпикур, Лукреций', desc: 'Удовольствие как отсутствие страданий. Атомизм.',
+          details: [{ name: 'Эпикур (341–270 до н.э.)', ideas: ['Не бойтесь смерти: пока мы есть, смерти нет.', 'Боги далеки и не вмешиваются в наши дела.', 'Счастье — через знание, дружбу и свободу от страха.'] }], hasVideo: false },
+        { id: 'skepticism', name: 'Скептицизм', period: 'III век до н.э. – III век н.э.', thinkers: 'Пиррон, Секст Эмпирик, Тимон', desc: 'Воздержание от суждений. Путь к атараксии.',
+          details: [
+            { name: 'Пиррон из Элиды (ок. 360–275 до н.э.)', ideas: ['Знание субъективно.', 'Нужно следовать обычаям места и времени.'] },
+            { name: 'Секст Эмпирик (II–III вв. н.э.)', ideas: ['Любому утверждению можно противопоставить равносильное возражение.', 'Воздержание от суждений (эпохе) ведёт к безмятежности (атараксия).'] }
+          ], hasVideo: false },
+        { id: 'neoplatonism', name: 'Неоплатонизм', period: 'III–VI века н.э.', thinkers: 'Плотин, Порфирий, Прокл', desc: 'Учение о Едином. Эманация. Мистическое восхождение.',
+          details: [{ name: 'Плотин (ок. 204–270 н.э.)', ideas: ['Три уровня бытия: душа, интеллект и благо.', 'Нужно стремиться к восхождению к единству с благом.'] }], hasVideo: false },
+        { id: 'scholasticism', name: 'Схоластика', period: 'IX–XIV века', thinkers: 'Фома Аквинский, Ансельм, Оккам', desc: 'Философия как служанка теологии. Универсалии.',
+          details: [
+            { name: 'Фома Аквинский (1225–1274)', ideas: ['Пять доказательств бытия Бога.', 'Гармония веры и разума.'] },
+            { name: 'Уильям Оккам (1287–1347)', ideas: ['«Бритва Оккама» — не умножать сущее без необходимости.', 'Универсалии — только имена.'] }
+          ], hasVideo: false },
+        { id: 'humanism', name: 'Гуманизм Ренессанса', period: 'XIV–XVI века', thinkers: 'Пико делла Мирандола, Эразм, Монтень', desc: 'Возвращение к античности. Прославление человека.',
+          details: [
+            { name: 'Пико делла Мирандола (1463–1494)', ideas: ['Человек — кузнец собственного счастья.', '«Речь о достоинстве человека» — манифест гуманизма.'] },
+            { name: 'Мишель Монтень (1533–1592)', ideas: ['«Что я знаю?» — скептицизм как основа познания.', 'Очерки как новый жанр философствования.'] }
+          ], hasVideo: false },
+        { id: 'rationalism', name: 'Рационализм', period: 'XVII век', thinkers: 'Декарт, Спиноза, Лейбниц', desc: 'Разум — источник истины. Cogito ergo sum.',
+          details: [
+            { name: 'Рене Декарт (1596–1650)', ideas: ['«Cogito ergo sum» — «Я мыслю, следовательно, существую».', 'Метод радикального сомнения.', 'Дуализм души и тела.'] },
+            { name: 'Бенедикт Спиноза (1632–1677)', ideas: ['Пантеизм: Бог и природа — одно.', 'Свобода — познанная необходимость.'] },
+            { name: 'Готфрид Лейбниц (1646–1716)', ideas: ['Монадология: мир состоит из монад.', '«Наш мир — лучший из возможных миров».'] }
+          ], hasVideo: false },
+        { id: 'empiricism', name: 'Эмпиризм', period: 'XVII–XVIII века', thinkers: 'Бэкон, Локк, Беркли, Юм', desc: 'Опыт — источник знания. Tabula rasa.',
+          details: [
+            { name: 'Джон Локк (1632–1704)', ideas: ['Tabula rasa — разум — чистая доска.', 'Первичные и вторичные качества.'] },
+            { name: 'Дэвид Юм (1711–1776)', ideas: ['Проблема индукции: нет логического обоснования причинности.', 'Скептицизм в отношении «я».'] }
+          ], hasVideo: false },
+        { id: 'enlightenment', name: 'Просвещение', period: 'XVIII век', thinkers: 'Вольтер, Руссо, Дидро, Монтескьё', desc: 'Вера в прогресс и разум. Общественный договор.',
+          details: [
+            { name: 'Вольтер (1694–1778)', ideas: ['Свобода слова, веротерпимость.', 'Критика церкви и абсолютизма.'] },
+            { name: 'Жан-Жак Руссо (1712–1778)', ideas: ['«Человек рождается свободным, но повсюду в оковах».', 'Общественный договор.'] },
+            { name: 'Шарль Монтескьё (1689–1755)', ideas: ['Разделение властей на три ветви.', 'Теория климата.'] }
+          ], hasVideo: false },
+        { id: 'germanIdealism', name: 'Немецкий идеализм', period: 'XVIII–XIX века', thinkers: 'Кант, Фихте, Шеллинг, Гегель', desc: 'Категорический императив. Диалектика. Абсолютный дух.',
+          details: [
+            { name: 'Иммануил Кант (1724–1804)', ideas: ['Коперниканский переворот в философии.', 'Категорический императив.', 'Априорные формы чувственности.'] },
+            { name: 'Георг Гегель (1770–1831)', ideas: ['Диалектика: тезис — антитезис — синтез.', 'Абсолютный дух как высшая стадия развития.'] }
+          ], hasVideo: false },
+        { id: 'marxism', name: 'Марксизм', period: 'XIX век', thinkers: 'Маркс, Энгельс, Ленин', desc: 'Материалистическое понимание истории. Классовая борьба.',
+          details: [{ name: 'Карл Маркс (1818–1883)', ideas: ['Базис (экономика) определяет надстройку.', 'Классовая борьба как двигатель истории.', 'Теория прибавочной стоимости.'] }], hasVideo: false },
+        { id: 'utilitarianism', name: 'Утилитаризм', period: 'XIX век', thinkers: 'Бентам, Милль', desc: 'Наибольшее счастье для наибольшего числа людей.',
+          details: [
+            { name: 'Джереми Бентам (1748–1832)', ideas: ['Принцип полезности.', '«Фелицифический калькулятор».'] },
+            { name: 'Джон Стюарт Милль (1806–1873)', ideas: ['Различие высших и низших удовольствий.', 'Свобода личности как высшее благо.'] }
+          ], hasVideo: false },
+        { id: 'irrationalism', name: 'Иррационализм', period: 'XIX век', thinkers: 'Шопенгауэр, Кьеркегор, Ницше', desc: 'Воля к жизни. Экзистенциальный выбор. Сверхчеловек.',
+          details: [
+            { name: 'Артур Шопенгауэр (1788–1860)', ideas: ['Мир как воля и представление.', 'Воля к жизни — источник страдания.'] },
+            { name: 'Фридрих Ницше (1844–1900)', ideas: ['«Бог умер» — критика христианской морали.', 'Воля к власти как основа жизни.', 'Сверхчеловек как цель эволюции.'] },
+            { name: 'Сёрен Кьеркегор (1813–1855)', ideas: ['Три стадии существования: эстетическая, этическая, религиозная.', 'Прыжок веры.'] }
+          ], hasVideo: false },
+        { id: 'phenomenology', name: 'Феноменология', period: 'XX век', thinkers: 'Гуссерль, Хайдеггер, Мерло-Понти', desc: '«Назад к вещам!» Исследование сознания.',
+          details: [
+            { name: 'Эдмунд Гуссерль (1859–1938)', ideas: ['Феноменологическая редукция (эпохе).', 'Интенциональность сознания.'] },
+            { name: 'Мартин Хайдеггер (1889–1976)', ideas: ['Бытие-в-мире (Dasein).', 'Подлинное и неподлинное существование.'] }
+          ], hasVideo: false },
+        { id: 'existentialism', name: 'Экзистенциализм', period: 'XX век', thinkers: 'Сартр, Камю, де Бовуар, Ясперс', desc: 'Существование предшествует сущности. Свобода и тревога.',
+          details: [
+            { name: 'Жан-Поль Сартр (1905–1980)', ideas: ['«Существование предшествует сущности».', 'Человек осуждён быть свободным.'] },
+            { name: 'Альбер Камю (1913–1960)', ideas: ['Абсурд как противоречие.', 'Бунт как ответ на абсурд.', 'Миф о Сизифе.'] },
+            { name: 'Симона де Бовуар (1908–1986)', ideas: ['«Вторая пол» — фундамент феминизма.', '«Женщиной не рождаются, женщиной становятся».'] }
+          ], hasVideo: false },
+        { id: 'analytic', name: 'Аналитическая философия', period: 'XX–XXI века', thinkers: 'Рассел, Витгенштейн, Остин, Куайн', desc: 'Лингвистический поворот. Анализ языка.',
+          details: [
+            { name: 'Людвиг Витгенштейн (1889–1951)', ideas: ['«О чём невозможно говорить, о том следует молчать».', 'Значение слова — в его употреблении.'] },
+            { name: 'Бертран Рассел (1872–1970)', ideas: ['Теория дескрипций.', 'Логический атомизм.'] }
+          ], hasVideo: false },
+        { id: 'poststructuralism', name: 'Постструктурализм', period: 'XX–XXI века', thinkers: 'Фуко, Деррида, Делёз, Бодрийяр', desc: 'Деконструкция. Власть и знание. Симулякры.',
+          details: [
+            { name: 'Мишель Фуко (1926–1984)', ideas: ['Власть и знание неразрывно связаны.', 'Биовласть и дисциплинарное общество.'] },
+            { name: 'Жак Деррида (1930–2004)', ideas: ['Деконструкция текста.', 'Различие (différance).'] },
+            { name: 'Жиль Делёз (1925–1995)', ideas: ['Ризома как альтернатива иерархии.', 'Машины желания.'] }
+          ], hasVideo: false }
+    ];
+
+    // Генерация страницы со списком школ
+    function renderSchoolsList() {
+        const grid = document.getElementById('schoolsGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        schoolsData.forEach(school => {
+            const card = document.createElement('div');
+            card.className = 'school-card';
+            card.onclick = () => showSchoolPage(school.id);
+            card.innerHTML = `
+                <div class="school-period">${school.period}</div>
+                <div class="school-name">${school.name}</div>
+                <div class="school-thinkers">${school.thinkers}</div>
+                <div class="school-desc">${school.desc}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // Генерация страницы отдельной школы
+    function showSchoolPage(schoolId) {
+        const school = schoolsData.find(s => s.id === schoolId);
+        if (!school) return;
+        
+        const container = document.getElementById('dynamicPages');
+        const pageId = schoolId + 'Page';
+        
+        // Удаляем старую страницу если есть
+        let existingPage = document.getElementById(pageId);
+        if (existingPage) existingPage.remove();
+        
+        // Создаём новую страницу
+        const pageDiv = document.createElement('div');
+        pageDiv.id = pageId;
+        pageDiv.className = 'page';
+        
+        // Видео
+        let videoHtml = '';
+        if (school.hasVideo && school.videoUrl) {
+            videoHtml = `<div class="video-container"><iframe src="${school.videoUrl}" frameborder="0" allowfullscreen></iframe></div>`;
+        }
+        
+        // Карточки мыслителей
+        let thinkersHtml = '';
+        school.details.forEach(detail => {
+            let ideasHtml = '<ul>';
+            detail.ideas.forEach(idea => { ideasHtml += `<li>${idea}</li>`; });
+            ideasHtml += '</ul>';
+            thinkersHtml += `
+                <div class="thinker-card">
+                    <div class="thinker-name">${detail.name}</div>
+                    <div class="thinker-ideas"><strong>Основные идеи:</strong>${ideasHtml}</div>
+                </div>
+            `;
         });
         
-        let targetId = pageId;
-        if (pageId === 'main') targetId = 'mainPage';
-        if (pageId === 'philosophy') targetId = 'philosophyPage';
+        pageDiv.innerHTML = `
+            <div class="school-page-header">
+                <div class="school-page-title">${school.name}</div>
+                <div class="school-page-period">${school.period}</div>
+            </div>
+            ${videoHtml}
+            ${thinkersHtml}
+            <span class="back-link" onclick="showPage('philosophy')">← Вернуться к школам</span>
+        `;
         
-        const targetPage = document.getElementById(targetId);
-        if (targetPage) {
-            targetPage.classList.add('active');
-        } else {
+        container.appendChild(pageDiv);
+        
+        // Скрываем все страницы и показываем новую
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        pageDiv.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showPage(pageName) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        if (pageName === 'main') {
             document.getElementById('mainPage').classList.add('active');
+        } else if (pageName === 'philosophy') {
+            document.getElementById('philosophyPage').classList.add('active');
+            renderSchoolsList();
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function showSchool(schoolId) {
-        showPage(schoolId + 'Page');
-    }
-
+    // Стихи
     const poems = [
         { author: "Анна Ахматова", lines: "Муза ушла по дороге,\nОсенней, узкой, крутой,\nИ были черны ее ноги\nКрупной утренней росой." },
         { author: "Осип Мандельштам", lines: "Мы живем, под собою не чуя страны,\nНаши речи за десять шагов не слышны,\nА где хватит на полразговорца,\nТам припомнят кремлевского горца." },
         { author: "Борис Пастернак", lines: "Во всем мне хочется дойти\nДо самой сути.\nВ работе, в поисках пути,\nВ сердечной смуте." },
         { author: "Марина Цветаева", lines: "Моим стихам, написанным так рано,\nЧто и не знала я, что я — поэт,\nСорвавшимся, как брызги из фонтана,\nКак искры из ракет." },
         { author: "Иосиф Бродский", lines: "Я входил вместо дикого зверя в клетку,\nжег свой срок и кликуху гвоздил в дощатом рундуке,\nбыл обласкан и зализан у моря,\nи пропущен на рейс в сарае." },
-        { author: "Александр Блок", lines: "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет." },
-        { author: "Сергей Есенин", lines: "Не жалею, не зову, не плачу,\nВсё пройдет, как с белых яблонь дым.\nУвяданья золотом охваченный,\nЯ не буду больше молодым." },
-        { author: "Владимир Маяковский", lines: "Послушайте!\nВедь, если звезды зажигают —\nзначит — это кому-нибудь нужно?\nЗначит — кто-то хочет, чтобы они были?" },
-        { author: "Афанасий Фет", lines: "Шепот, робкое дыханье,\nТрели соловья,\nСеребро и колыханье\nСонного ручья." },
-        { author: "Фёдор Тютчев", lines: "Умом Россию не понять,\nАршином общим не измерить:\nУ ней особенная стать —\nВ Россию можно только верить." },
-        { author: "Николай Гумилёв", lines: "Я вежлив с жизнью современною,\nНо между нами есть преграда,\nВсё, что смешит ее, надменную,\nМоя единая отрада." },
-        { author: "Владимир Набоков", lines: "Лишь о тебе мои стихи,\nмоя любовь, моя отрава,\nтебе — улыбка, мне — забава,\nтебе — цветы, мне — все стихи." }
+        { author: "Александр Блок", lines: "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет." }
     ];
 
-    function getRandomPoem() {
-        return poems[Math.floor(Math.random() * poems.length)];
-    }
-
+    function getRandomPoem() { return poems[Math.floor(Math.random() * poems.length)]; }
     function updatePoem() {
         const poem = getRandomPoem();
         const authorElem = document.getElementById('poemAuthor');
@@ -660,11 +335,13 @@
             linesElem.innerHTML = poem.lines.replace(/\n/g, '<br>');
         }
     }
-
     if (document.getElementById('refreshPoemBtn')) {
         updatePoem();
         document.getElementById('refreshPoemBtn').addEventListener('click', updatePoem);
     }
+    
+    // Предзагрузка списка школ при первом открытии
+    renderSchoolsList();
 </script>
 </body>
 </html>
