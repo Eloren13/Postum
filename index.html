@@ -11,22 +11,44 @@
             box-sizing: border-box;
         }
         body {
-            background: url('bg.jpg');
+            background-color: #f5f5f2;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: system-ui, -apple-system, 'Helvetica Neue', 'Roboto', 'Segoe UI', 'Arial', sans-serif;
             color: #1a1a1a;
             line-height: 1.3;
             padding: 0rem 1rem 2rem 1rem;
+            position: relative;
+        }
+        /* Полупрозрачный слой для улучшения читаемости */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(245, 245, 242, 0.75);
+            z-index: -1;
+            pointer-events: none;
         }
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
         .nav-links {
             text-align: right;
             padding: 1rem 0;
             border-bottom: 1px solid #d4d4ce;
             margin-bottom: 1rem;
+            background-color: rgba(245, 245, 242, 0.7);
+            backdrop-filter: blur(5px);
         }
         .nav-link {
             display: inline-block;
@@ -53,6 +75,8 @@
             margin: 0rem 0 2rem 0;
             padding: 3rem 1rem 2rem 1rem;
             border-bottom: 1px solid #d4d4ce;
+            background-color: rgba(245, 245, 242, 0.6);
+            backdrop-filter: blur(8px);
         }
         .main-title {
             font-family: 'Times New Roman', 'Georgia', serif;
@@ -63,14 +87,16 @@
             margin-bottom: 2.5rem;
             margin-top: 0.5rem;
             line-height: 1;
+            text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
         }
         .poem-block {
             max-width: 600px;
             margin: 0 auto;
             padding: 1.5rem;
-            background: #fefef8;
+            background: rgba(254, 254, 248, 0.9);
             border: 1px solid #e8e8e2;
             transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
         }
         .poem-author {
             font-size: 0.85rem;
@@ -125,7 +151,8 @@
         .special-card {
             flex: 1;
             min-width: 280px;
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
             padding: 1.5rem;
             border: 1px solid #e3e3de;
             transition: all 0.2s ease;
@@ -133,11 +160,12 @@
         }
         .special-card:hover {
             border-color: #a0a09a;
-            background: #fefefc;
+            background: rgba(254, 254, 252, 0.95);
             transform: translateY(-2px);
         }
         .school-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             border: 1px solid #e3e3de;
             padding: 1.8rem;
             transition: all 0.2s;
@@ -145,7 +173,7 @@
         }
         .school-card:hover {
             border-color: #a0a09a;
-            background: #fefefc;
+            background: rgba(254, 254, 252, 0.95);
             transform: translateY(-2px);
         }
         .special-label {
@@ -247,7 +275,8 @@
             border: none;
         }
         .thinker-card {
-            background: #fefef8;
+            background: rgba(254, 254, 248, 0.85);
+            backdrop-filter: blur(10px);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-left: 4px solid #a0a09a;
@@ -262,18 +291,13 @@
             margin-top: 0.8rem;
             padding-left: 0;
             list-style: none;
-            line-height: 1.5;
-        }
-        .thinker-ideas li {
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-            padding-left: 1.2rem;
-            text-indent: -1.2rem;
+            line-height: 1.7;
         }
         .thinker-ideas strong {
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            margin-top: 0.5rem;
+            font-size: 1.05rem;
             color: #1a1a1a;
         }
         .back-link {
@@ -301,6 +325,8 @@
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
             padding-bottom: 0.5rem;
+            background-color: rgba(245, 245, 242, 0.5);
+            backdrop-filter: blur(5px);
         }
         .book-card:hover {
             border-bottom-color: #c0c0b8;
@@ -328,6 +354,8 @@
             font-size: 0.8rem;
             color: #6a6a65;
             text-align: left;
+            background-color: rgba(245, 245, 242, 0.7);
+            backdrop-filter: blur(5px);
         }
         @media (max-width: 700px) {
             body {
