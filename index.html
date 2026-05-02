@@ -22,15 +22,16 @@
     box-shadow: inset 0 0 150px rgba(0,0,0,0.08);
 }
 
-/* новый фон с градиентом */
+
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background:
-        linear-gradient(rgba(245,245,242,0.75), rgba(245,245,242,0.9)),
-        url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d') center/cover no-repeat;
-    z-index: -1;
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(120,110,90,0.08), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(90,100,120,0.06), transparent 40%),
+        linear-gradient(#f5f5f2, #ecece6);
+    z-index: -2;
 }
 
 /* текстура */
