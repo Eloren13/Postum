@@ -69,16 +69,22 @@ body::after {
         .page.active {
             display: block;
         }
-       .hero {
-    background: transparent;
+      .hero {
+    text-align: center;
+    margin: 0 auto 3rem auto;
+    padding: 4rem 1rem 3rem 1rem;
+    max-width: 900px;
     border-bottom: 1px solid #e0dfd8;
+    background: transparent;
 }
      .main-title {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size: 120px;
+    font-size: 140px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    text-shadow: none;
+    line-height: 1;
+    margin-bottom: 2rem;
+    text-align: center;
 }
         .poem-block,
         .special-card,
@@ -86,11 +92,11 @@ body::after {
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
        .poem-block {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 1.5rem;
     background: #ffffff;
     border: 1px solid #e6e5df;
-    padding: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
 }
         .poem-author {
             font-size: 0.85rem;
@@ -108,24 +114,20 @@ body::after {
             white-space: pre-line;
             margin-bottom: 1.2rem;
         }
-        .refresh-btn {
-            background: none;
-            border: 1px solid #c0c0b8;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.75rem;
-            font-family: inherit;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #5a5a55;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 0.5rem;
-        }
-        .refresh-btn:hover {
-            background: #e8e8e2;
-            border-color: #8a8a85;
-            color: #1a1a1a;
-        }
+     .refresh-btn {
+    background: none;
+    border: 1px solid #d6d5cf;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6a6a65;
+}
+
+.refresh-btn:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+}
         .specials {
             margin: 2rem 0 4rem 0;
         } 
